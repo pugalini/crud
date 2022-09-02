@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JE -orders</title>
+    <link rel="stylesheet" href="CRHome.css">
+    <script src="CRHome.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <!-- header -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#" style="color: #ffff; font-size: 250%;"><i class="fa-brands fa-d-and-d"></i>JE <br> <br>SALES FORCE
+                    AUTOMATION</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="homepage.html" style="color: #ffff; font-size: 150%;margin-top: 20px;"><i
+                            class="fa-solid fa-house"></i>Home</a></li>
+                <li><a style="color: #ffff;font-size: 150%;margin-top: 20px;"><i class="fa-solid fa-expand" ></i></a>
+                </li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"
+                        style="color: #ffff;font-size: 150%;margin-top: 20px;"><i class="fa-solid fa-user"></i>Pugalini
+                        Mohanaraj <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="loginpage.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+<!-- vertical tabs -->
+<div class="tab">
+    <img class="img" src="/home/ukistudent/Desktop/CRUD application/je.jpg" >
+  <label class="active">Referance</label>
+  <button class="tablinks" onclick="openCM(event, 'preorders')">Pre-Orders</button>
+  <button class="tablinks" onclick="openCM(event, 'itemsdetais')">Items Details<i class="fa-solid fa-caret-right"></i></button>
+  <button class="tablinks" onclick="openCM(event, 'Customerinformation')">Customer information<i class="fa-solid fa-caret-right"></i></button>
+  <button class="tablinks" onclick="openCM(event, 'Other')">Other<i class="fa-solid fa-caret-right"></i></button>
+  <label class="active">Transaction</label>
+  <button class="tablinks" onclick="openCM(event, 'TransactionSummary')">Transaction Summary<i class="fa-solid fa-caret-right"></i></button>
+  <button class="tablinks" onclick="openCM(event, 'InventryManagement ')">Inventry Management<i class="fa-solid fa-caret-right"></i> </button>
+  <label class="active" >Reports</label>
+  <button class="tablinks" onclick="openCM(event, 'CustomerOutstandingReports')">Customer Outstanding Reports<i class="fa-solid fa-caret-right"></i></button>
+</div>
+
+<div id="preorders" class="tabcontent">
+    <marquee direction="right" 
+        behavior="alternate" style="font-size: 250%; color: #05062a;font-weight: bolder;" >
+        Create New Orders
+    </marquee>
+    <table>
+        <tr>
+            <td>
+                <form  onsubmit="event.preventDefault();onFormSubmit()" autocomplete="off" style="margin-left: 10px;">
+                    <div>
+                        <label for="name" >Name</label><label class="validation-error hide" id="nameValidationError">This field is required.</label>
+                        <br>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div>
+                        <label for="emailAddress">Email Address</label>
+                        <br>
+                        <input type="text" name="emailAddress" id="emailAddress">
+                    </div>
+                    <div>
+                        <label for="items">Items</label>
+                        <br>
+                        <input type="text" name="items" id="items">
+                    </div>
+                    <div>
+                        <label for="qty">Qty</label>
+                        <br>
+                        <input type="number" name="qty" id="qty">
+                    </div>
+                    <div>
+                        <label for="rdd">Request Delivery Date</label>
+                        <br>
+                        <input type="date" name="rdd" id="rdd">
+                    </div>
+
+                    <div class="form_action--button">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </div>
+                </form>
+
+                <td>
+                    <table class="list" id="storeList">
+                        <thead>
+                            <tr>
+                                <!-- <th style="padding-bottom: 10px;padding-top: 10px;padding-left: 10px;">No</th> -->
+                                <th  style="padding-bottom: 10px;padding-top: 10px;padding-left: 10px;">Name</th>
+                                <th  style="padding-bottom: 10px;padding-top: 10px;padding-left: 10px;">Email Address</th>
+                                <th  style="padding-bottom: 10px;padding-top: 10px;padding-left: 10px;">Items</th>
+                                <th  style="padding-bottom: 10px;padding-top: 10px;padding-left: 10px;">Qty</th>
+                                <th  style="padding-bottom: 10px;padding-top: 10px;padding-left: 10px;">Request Delivery Date</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </td>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div id="itemsdetais" class="tabcontent" style="background-color:  #9fa7b2;">
+<img class="img2" src="/home/ukistudent/Downloads/IMG-20220603-WA0000.jpg">
+
+</div>
+
+
+</body>
+
+</html>
